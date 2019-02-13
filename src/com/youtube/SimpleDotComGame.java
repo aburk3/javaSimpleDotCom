@@ -1,34 +1,37 @@
 package com.youtube;
 
 public class SimpleDotComGame {
-    int numOfGuesses = 0;
+    public static void main(String[] args) {
+        int numOfGuesses = 0;
 
-    GameHelper helper = new GameHelper();
-
-
-    SimpleDotCom theDotCom = new SimpleDotCom();
-
-    int randomNum = (int) (Math.random() * 5);
+        GameHelper helper = new GameHelper();
 
 
-    int[] locations = {randomNum, randomNum+1, randomNum+2};
+        SimpleDotCom theDotCom = new SimpleDotCom();
 
-    theDotCom.setLocationCells(locations);
-
-    boolean isAlive = true;
+        int randomNum = (int) (Math.random() * 5);
 
 
-    while(isAlive == true) {
-        String guess = helper.getUserInput("enter a number");
+        int[] locations = {randomNum, randomNum+1, randomNum+2};
 
-        String result = theDotCom.checkYourself(guess);
+        theDotCom.setLocationCells(locations);
 
-        numOfGuesses++;
+        boolean isAlive = true;
 
-        if (result.equals("kill")) {
-            isAlive = false;
 
-            System.out.println("You took " + numOfGuesses + " guesses");
+        while(isAlive == true) {
+            String guess = helper.getUserInput("enter a number");
+
+            String result = theDotCom.checkYourself(guess);
+
+            numOfGuesses++;
+
+            if (result.equals("kill")) {
+                isAlive = false;
+
+                System.out.println("You took " + numOfGuesses + " guesses");
+            }
         }
     }
+
 }
