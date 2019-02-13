@@ -19,6 +19,7 @@ public class SimpleDotComGame {
          */
         int[] locations = {randomNum, randomNum+1, randomNum+2};
 
+
         theDotCom.setLocationCells(locations);
 
 

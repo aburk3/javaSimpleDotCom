@@ -1,19 +1,21 @@
 package com.youtube;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 
 public class SimpleDotCom {
-
-    int[] locationCells;
-    int numOfHits = 0;
+    private ArrayList<String> locationCells;
+//    int[] locationCells;
+//    int numOfHits = 0;
 
 
     /**
      * Receives locations of dotCom from test class
      * Sets the locations equal to locationCells variable
      */
-    public void setLocationCells(int[] locs) {
-        locationCells = locs;
+    public void setLocationCells(ArrayList<String> loc) {
+        locationCells = loc;
     }
 
 
@@ -23,33 +25,22 @@ public class SimpleDotCom {
      * Loops through the locationCells and increments if it results in a hit
      *
      */
-    public String checkYourself(String stringGuess) {
+    public String checkYourself(String userInput) {
 
-        int guess = Integer.parseInt(stringGuess);
 
         String result = "miss";
 
-        for (int cell : locationCells) {
-            if (guess == cell) {
+        int index = locationCells.indexOf(userInput);
+
+        if (index >= 0) {
+            locationCells.remove(index);
+
+            if (locationCells.isEmpty()) {
+                result = "kill";
+            } else {
                 result = "hit";
-
-                numOfHits++;
-
-                break;
             }
         }
-
-
-        /**
-         * If the number of hits equals the total number of cells, it means they have 'killed' the dotCom
-         */
-        if (numOfHits == locationCells.length) {
-            result = "kill";
-        }
-
-        System.out.println(result);
-
         return result;
-
     }
 }
