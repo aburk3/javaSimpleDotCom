@@ -1,13 +1,13 @@
 package com.youtube;
 
-public class SimpleDotComGame {
+public class DotComBust {
     public static void main(String[] args) {
         int numOfGuesses = 0;
 
         GameHelper helper = new GameHelper();
 
 
-        SimpleDotCom theDotCom = new SimpleDotCom();
+        DotCom theDotCom = new DotCom();
 
         /**
          * Create a random number between 0-4.999, cast it to an int, assign to variable

@@ -4,10 +4,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
-public class SimpleDotCom {
+public class DotCom {
     private ArrayList<String> locationCells;
-//    int[] locationCells;
-//    int numOfHits = 0;
 
 
     /**
