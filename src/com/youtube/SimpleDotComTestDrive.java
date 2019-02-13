@@ -1,7 +1,10 @@
 package com.youtube;
 
+import com.youtube.SimpleDotCom;
+
 public class SimpleDotComTestDrive {
     public static void main (String[] args) {
+
         SimpleDotCom dot = new SimpleDotCom();
 
 
