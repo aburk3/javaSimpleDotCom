@@ -1,5 +1,5 @@
 package com.youtube;
-import java.util.ArrayList;
+import java.util.*;
 
 public class DotComBust {
 
@@ -14,6 +14,9 @@ public class DotComBust {
             two.setName("Github.com");
             DotCom three = new DotCom();
             three.setName("CodeAcademy.com");
+            dotComsList.add(one);
+            dotComsList.add(two);
+            dotComsList.add(three);
 
             System.out.println("Your goal is to sink three dot coms.");
             System.out.println("Stackoverflow.com, Github.com, Codeacademy.com");
@@ -37,13 +40,13 @@ public class DotComBust {
             numOfGuesses++;
             String result = "miss";
 
-            for (DotCom dotComToTest : dotComsList) {
-                result = dotComToTest.checkYourself(userGuess);
+            for (int x = 0; x < dotComsList.size(); x++) {
+                result = dotComsList.get(x).checkYourself(userGuess);
                 if (result.equals("hit")) {
                     break;
                 }
                 if (result.equals("kill")) {
-                    dotComList.remove(dotComToTest);
+                    dotComsList.remove(x);
                     break;
                 }
             }
@@ -61,7 +64,7 @@ public class DotComBust {
             }
         }
 
-        private static void main (String[] args) {
+        public static void main (String[] args) {
             DotComBust game = new DotComBust();
             game.setUpGame();
             game.startPlaying();

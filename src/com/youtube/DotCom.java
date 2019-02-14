@@ -1,7 +1,6 @@
 package com.youtube;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class DotCom {
@@ -42,6 +41,7 @@ public class DotCom {
 
             if (locationCells.isEmpty()) {
                 result = "kill";
+                System.out.println("Ouch! You sunk " + name + "   : ( ");
             } else {
                 result = "hit";
             }
