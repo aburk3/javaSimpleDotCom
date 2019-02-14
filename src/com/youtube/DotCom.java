@@ -16,6 +16,11 @@ public class DotCom {
         locationCells = loc;
     }
 
+
+    /**
+     *
+     * Setter for the DotCom name
+     */
     public void setName(String n) {
         name = n;
     }
@@ -28,8 +33,6 @@ public class DotCom {
      *
      */
     public String checkYourself(String userInput) {
-
-
         String result = "miss";
 
         int index = locationCells.indexOf(userInput);
